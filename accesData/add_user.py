@@ -1,5 +1,3 @@
-from matplotlib.backend_tools import cursors
-
 from exercici1 import Formulari
 
 
