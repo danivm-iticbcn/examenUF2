@@ -9,5 +9,5 @@ conn = connection.createConection()
 print(conn)
 
 @app.get("/user/{formulari}")
-async def grabarFormulari(formulari: Formulari):
+async def mostrarFormulari(formulari: Formulari):
     return schemes.formulari_schema(formulari)
