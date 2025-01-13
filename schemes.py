@@ -1,14 +1,12 @@
-def formulari_schema(formulari) -> dict:
-    return {"nombre": formulari[0],
-            "apellido" : formulari[1],
-            "correo" : formulari[2],
-            "descripcion": formulari[3],
-            "curso": formulari[4],
-            "ano": formulari[5],
-            "direccion": formulari[6],
-            "cp": formulari[7],
-            "password": formulari[8]}
+from exercici1 import Formulari
 
 
-def formularis_schema(formularis) -> dict:
-    return [formulari_schema(formulari) for formulari in formularis]
+def formulari_schema(formulari: Formulari) -> dict:
+    # Jo crec que la contrasenya i direccio no haurien de estar per que son dades molt sensibles
+    return {"nombre": formulari.nombre,
+            "apellido" : formulari.apellido,
+            "password" : formulari.password,
+            "email": formulari.correo,
+            "direcion": formulari.direccion,
+            "cp": formulari.cp,
+            "age": formulari.ano}

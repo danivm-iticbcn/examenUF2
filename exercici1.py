@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 import connection
-import schemes
 
 app = FastAPI()
 conn = connection.createConection()
@@ -18,7 +17,3 @@ class Formulari(BaseModel):
     direccion: str
     cp: int | None = None
     password: str
-
-@app.post("/grabarForm")
-async def grabarFormulari(formulari: Formulari):
-    return schemes.formularis_schema(formulari)
