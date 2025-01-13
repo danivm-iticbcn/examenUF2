@@ -1,15 +1,27 @@
 from exercici1 import Formulari
 
+def usuari3_schema(usuari: Formulari) -> dict:
+    # Jo crec que la contrasenya i direccio no haurien de estar per que son dades molt sensibles
+    return {"nombre": usuari.nombre,
+            "apellido" : usuari.apellido,
+            "password" : usuari.password,
+            "email": usuari.correo,
+            "direcion": usuari.direccion,
+            "cp": usuari.correo,
+            "age": usuari.ano}
 
 def usuari_schema(usuari) -> dict:
     # Jo crec que la contrasenya i direccio no haurien de estar per que son dades molt sensibles
     return {"nombre": usuari[0],
             "apellido" : usuari[1],
-            "password" : usuari[2],
-            "email": usuari[3],
-            "direcion": usuari[4],
-            "cp": usuari[5],
-            "age": usuari[6]}
+            "correo" : usuari[2],
+            "descripcion": usuari[3],
+            "curso": usuari[4],
+            "ano": usuari[5],
+            "direccion": usuari[6],
+            "cp": usuari[7],
+            "password": usuari[8]
+            }
 
 
 def usuaris_schema(usuaris) -> dict:

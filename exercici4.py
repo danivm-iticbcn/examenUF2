@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import FastAPI
 from accesData import read
 
@@ -9,7 +11,7 @@ app = FastAPI()
 conn = connection.createConection()
 print(conn)
 
-@app.get("/users")
+@app.get("/users", response_model=List[dict])
 async def rebreUsuaris():
     usuaris = read.read_all(connection)
     return schemes.usuaris_schema(usuaris)

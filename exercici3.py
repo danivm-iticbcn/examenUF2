@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import FastAPI
 
 import connection
@@ -8,6 +10,6 @@ app = FastAPI()
 conn = connection.createConection()
 print(conn)
 
-@app.get("/user/{formulari}")
+@app.get("/user", response_model=List[dict])
 async def mostrarFormulari(formulari: Formulari):
-    return schemes.formulari_schema(formulari)
+    return schemes.usuari3_schema(formulari)
